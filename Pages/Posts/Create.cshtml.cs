@@ -26,7 +26,7 @@ namespace BlogApp.Pages.Posts
             }
 
             try {
-                String dbConString = "Data Source=RMB_VICTUS;Initial Catalog=BlogDb;User Id=sa;Password=22721937;TrustServerCertificate=true;MultipleActiveResultSets=true";
+                String dbConString = "Data Source=RMB_VICTUS;Initial Catalog=BlogDb;User Id=sa;Password=1234;TrustServerCertificate=true;MultipleActiveResultSets=true";
                 using (SqlConnection connection = new SqlConnection(dbConString))
                 {
                     connection.Open();
