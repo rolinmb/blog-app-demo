@@ -1,0 +1,32 @@
+﻿@page
+@model BlogApp.Pages.Posts.IndexModel
+@{
+}
+
+<br>
+<h2>Posts</h2>
+<a class="btn btn-primary btn-sm" href="/Posts/Create">Create New Post</a>
+<br>
+<table>
+  <thead>
+    <tr>ID</tr>
+    <tr>Creator Name</tr>
+    <tr>Posted Time</tr>
+    <tr>Text Content</tr>
+  </thead>
+  <tbody>
+    @foreach(var post in Model.listPosts)
+    {
+      <tr>
+        <td>@post.id</td>
+        <td>@post.creatorName</td>
+        <td>@post.postedTime</td>
+        <td>@post.textContent</td>
+        <td>
+          <a class="btn btn-primary btn-sm" href="/Posts/Edit?id=@post.id">Edit</a>
+          <a class="btn btn-danger btn-sm" href="/Posts/Delete?id=@post.id">Delete</a>
+        </td>
+      </tr>
+    }
+    </tbody>
+</table>

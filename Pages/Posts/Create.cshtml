@@ -1,0 +1,51 @@
+﻿@page
+@model BlogApp.Pages.Posts.CreateModel
+@{
+}
+
+<br>
+<h2>Create New Post</h2>
+
+@if (Model.errorMsg.Length > 0)
+{
+  <div class="alert alert-warning alert-dismissable fade show" role="alert">
+    <strong>@Model.errorMsg</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+}
+
+<form method="POST">
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">New Post Creator Name</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" name="creator name" value="@Model.newPost.creatorName">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label class="col-sm-3 col-form-label">Text Content</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" name="text content" value="@Model.newPost.textContent">
+    </div>
+  </div>
+
+  @if(Model.successMsg.Length > 0)
+  {
+    <div class="row mb-3">
+      <div class="col-sm-9">
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>@Model.successMsg</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" alia-label="Close"></button>
+        </div>
+      </div>
+    </div>    
+  }
+
+  <div class="row mb-3">
+    <div class="offset-sm-3 col-sm-3 d-grid">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div class="col-sm-3 d-grid">
+      <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+    </div>
+  </div>
+</form>

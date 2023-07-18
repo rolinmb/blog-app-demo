@@ -1,0 +1,34 @@
+﻿@page
+@model BlogApp.Pages.Users.IndexModel
+@{
+}
+
+<br>
+<h2>Users</h2>
+<a class="btn btn-primary btn-sm" href="/Users/Create">Create New User</a>
+<br>
+<table>
+  <thead>
+    <tr>ID</tr>
+    <tr>Creator Name</tr>
+    <tr>Password</tr>
+    <tr>Full Name</tr>
+    <tr>Text Content</tr>
+  </thead>
+  <tbody>
+    @foreach(var user in Model.listUsers)
+    {
+      <tr>
+        <td>@user.id</td>
+        <td>@user.creatorName</td>
+        <td>@user.password</td>
+        <td>@user.fullName</td>
+        <td>@user.dateJoined</td>
+        <td>
+          <a class="btn btn-primary btn-sm" href="/Users/Edit?id=@user.id">Edit</a>
+          <a class="btn btn-danger btn-sm" href="/Users/Delete?id=@user.id">Delete</a>
+        </td>
+      </tr>
+    }
+    </tbody>
+</table>
